@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="This site uses modern techniques to capture and render the model of the 1855 New York and Erie Railroad diagram by D. C. McCallum and G. H. Henshaw."> 
+  <link rel="alternate" title="acodrst RSS" type="application/rss+xml" href="https://bsky.app/profile/did:plc:udswm74s7ngvzowgjjggw5br/rss">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>🚂</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"
+    integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw=="
+    crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/fzstd@0.1.1/umd/index.js"
+    integrity="sha512-9xkDKNSKtCn/6zLYEVT1Muu1KuZsFVFeoYggLPShyi1FSHSiLG2tTQ3Qt8k8JC7Wiu9jCprdZeHgUQo5fPq3ng=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fflate@0.8.2/umd/index.js"
+    integrity = "sha512-8l6PLZDUdQBuIjsM0vEKUCup9KP+EsB6NlvUtFrDneI1JoIvIJGmxIoiq0qnA31BeKdAwYcTk0TQg71AX9HgRA=="
+    crossorigin = "anonymous" ></script>
+  <script>
+    const t = "20250131T230705801Z",
+      a="4af92d0d",
+      g = "48762",
+      tl="51578";
+    fetch("20250131T230705801Z-4af92d0d.png").then((q) => {
+      q.arrayBuffer().then((a) => {
+        let l = fflate.unzlibSync(new Uint8Array(a.slice(41, -16))),
+          f = 0,
+          p = 0,
+          r = 0,
+          u = new Uint8Array(l.length);
+        do {
+          if (r == 1024 || f == 0) {
+            f++;
+            r = 0;
+          } else {
+            u[p] = l[f];
+            r++;
+            f++;
+            p++;
+          }
+        } while (f < l.length);
+        let z = fzstd.decompress(u.slice(7 * 1024, 7 * 1024 + 48762)),
+          s = document.createElement("script");
+        s.appendChild(document.createTextNode(new TextDecoder().decode(z)));
+        document.body.appendChild(s);
+      });
+    });
+  </script>
+</body>
+</html>

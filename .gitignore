@@ -1,0 +1,8 @@
+node_modules/**
+.*
+!.gitignore
+fflate.min.js
+fzstd.min.js
+site.txt
+*.backup
+*~

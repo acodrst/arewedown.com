@@ -1,0 +1,26 @@
+{
+  "name": "arewedown-com",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Are We Down COM",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/rollup/dist/bin/rollup -c",
+    "run": "deno run -A dist/tool.bundle.js"
+  },
+  "author": "Scott H.",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "rollup": "^4.24.0",
+    "rollup-license-plugin": "^3.0.0"
+  },
+  "dependencies": {
+    "@hpcc-js/wasm-graphviz": "^1.7.0",
+    "byte-base64": "^1.1.0",
+    "d3": "^7.9.0",
+    "fpng": "github:acodrst/fpng"
+  }
+}
