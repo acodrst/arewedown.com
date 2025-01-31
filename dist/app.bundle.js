@@ -3271,15 +3271,15 @@ key.innerHTML = `<table><tr>
 <td><img src="data:image/png;base64,` + site.nodes["🚂"].png +
   `"/></td><td>Machine Shop</td>` +
   `<td><img src="data:image/png;base64,` + site.nodes["🏢"].png +
-  `"/></td><td>Machine Shop</td>` +
+  `"/></td><td>Division Office</td>` +
   `<td><img src="data:image/png;base64,` + site.nodes["🚦"].png +
-  `"/></td><td>Machine Shop</td>` +
+  `"/></td><td>Flag and Switch Personell</td>` +
   `<tr><td><img src="data:image/png;base64,` + site.nodes["🛠"].png +
-  `"/></td><td>Machine Shop</td>` +
+  `"/></td><td>Repair Shop</td>` +
   `<td><img src="data:image/png;base64,` + site.nodes["☎️"].png +
-  `"/></td><td>Machine Shop</td>` +
+  `"/></td><td>Telegraph Station</td>` +
   `<td><img src="data:image/png;base64,` + site.nodes["🍴"].png +
-  `"/></td><td>Machine Shop</td></table>`;
+  `"/></td><td>Eating and Saloon</td></table>`;
 document.getElementById("graph").innerHTML = site.svg;
 const gr = select("#graph svg");
 const zoom = zoom$1()
